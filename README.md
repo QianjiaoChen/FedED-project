@@ -9,10 +9,13 @@ Joseph Casey and I tried to code the idea of this paper. We didn't implement the
 In this project, we have the python implementation and the poster for this project. 
 
 ## Abstract
-In order to protect the privacy of clients, we have to extract the medical relation and train the  model by federated learning. We use the pretrained model called BERT and also commented the bioBERT if you needed. (The problem here is that we didn't implement the BERT by ourselves as what they said.) For protecting the privacy, they choose to use federated learning. And then the problem is 
+In order to protect the privacy of clients, we have to extract the medical relation and train the  model by federated learning. We use the pretrained model called BERT and also commented the bioBERT if you needed. (The problem here is that we didn't implement the BERT by ourselves as what they said.) For protecting the privacy, they choose to use federated learning. And then the problem is how to lower the communication cost because of the huge number of the parameters. For the time efficiency, they introduce the ensemble distillation to have teacher models from local dataset to train the student model from central server. Our hyperparameters are different than what paper said since we didn't follow the BERT embedding thing they did. Compared with normal knowledge distillation, their central model and local models use the same nerual network structure. 
 ## GAD dataset
 This is a corpus identifying associations between genes and diseases by a semi-automatic annotation procedure based on the Genetic Association Database. 
 
+For a given dataset, after shuffling the training data, we have 5% as the central dataset, and the remaining data are divided by 10 parts,simulating the existence of local datasets.  In our training, we take 40% of local models are selected for trainning in each communication. After training, the precdition results of the model on the central server are uploaded and then we get the prediction results for all local models are integrated. They are all privoded to central model for learning.
+
+Compared with our results, we also coded the FedAvg algorithm. 
 ## Poster 
 It is under the readme file.
 
