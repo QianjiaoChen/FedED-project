@@ -1,4 +1,5 @@
 ## FedED-project
+In NLP class, I worked on this project with Joseph Casey.
 ## Paper
 FedED:             chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://aclanthology.org/2020.emnlp-main.165.pdf
 ## Author:
